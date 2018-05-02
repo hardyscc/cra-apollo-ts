@@ -8,12 +8,8 @@ class StocksQuery extends Query<GetStocksQuery> {}
 export const App = () => (
   <StocksQuery query={QUERY}>
     {({ loading, error, data }) => {
-      if (loading) {
-        return <div>Loading...</div>
-      }
-      if (error) {
-        return <div>Error :(</div>
-      }
+      if (loading) return <div>Loading...</div>
+      if (error) return <div>Error :(</div>
 
       return (
         <div>

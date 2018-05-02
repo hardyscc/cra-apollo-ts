@@ -1,22 +1,33 @@
 import * as React from 'react'
-import './App.css'
+import { Query } from 'react-apollo'
+import { GetStocks as QUERY } from './queries'
+import { GetStocksQuery } from './__generated__/types'
 
-import logo from './logo.svg'
+class StocksQuery extends Query<GetStocksQuery> {}
 
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    )
-  }
-}
+export const App = () => (
+  <StocksQuery query={QUERY}>
+    {({ loading, error, data }) => {
+      if (loading) {
+        return <div>Loading...</div>
+      }
+      if (error) {
+        return <div>Error :(</div>
+      }
 
-export default App
+      return (
+        <div>
+          Stocks :
+          <ul>
+            {data &&
+              data.stocks.map(stock => (
+                <li key={stock.code}>
+                  {stock.code} {stock.name}
+                </li>
+              ))}
+          </ul>
+        </div>
+      )
+    }}
+  </StocksQuery>
+)

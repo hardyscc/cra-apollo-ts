@@ -1,8 +1,19 @@
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import App from './App'
-import './index.css'
+import { render } from 'react-dom'
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
+import { App } from './App'
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)
+import './index.css'
+
+const client = new ApolloClient({ uri: 'https://portfolios.now.sh/' })
+
+const WrappedApp = (
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+)
+
+render(WrappedApp, document.getElementById('root'))
 registerServiceWorker()

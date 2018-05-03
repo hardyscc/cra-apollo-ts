@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { render, wait } from 'react-testing-library'
-import 'dom-testing-library/extend-expect'
 import { MockedProvider } from 'react-apollo/test-utils'
 import { App, STOCKS_QUERY } from '../App'
 

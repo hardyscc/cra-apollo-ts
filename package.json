@@ -16,7 +16,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "schema": "apollo-codegen introspect-schema https://portfolios.now.sh --output ./src/schema.json",
-    "types": "apollo-codegen generate ./src/**/queries.ts --addTypename --schema ./src/schema.json --target typescript --output ./src/__generated__/types.ts"
+    "types": "apollo-codegen generate ./src/**/*.tsx --addTypename --schema ./src/schema.json --target typescript --output ./src/__generated__/types.ts"
   },
   "devDependencies": {
     "@types/jest": "^22.2.3",
@@ -25,6 +25,10 @@
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "apollo-codegen": "^0.19.1",
+    "react-testing-library": "^2.4.0",
     "typescript": "^2.8.3"
-  }
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/components/**/*.{ts,tsx}"]
+  }  
 }

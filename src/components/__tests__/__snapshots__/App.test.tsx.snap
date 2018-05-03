@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App error 1`] = `
+<div>
+  <div>
+    Error :(
+  </div>
+</div>
+`;
+
+exports[`App render 1`] = `
+<div>
+  <div>
+    Stocks :
+    <ul>
+      <li>
+        0001.HK
+         
+        長和
+      </li>
+      <li>
+        0002.HK
+         
+        中電控股
+      </li>
+    </ul>
+  </div>
+</div>
+`;

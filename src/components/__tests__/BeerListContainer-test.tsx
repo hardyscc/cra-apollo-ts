@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import BeerListContainer from '../BeerListContainer'
 import InputArea from '../InputArea'
 import BeerList from '../BeerList'
@@ -8,7 +8,10 @@ describe('BeerListContainer', () => {
   it('should render InputArea and BeerList', () => {
     const wrapper = shallow(<BeerListContainer />)
     expect(
-      wrapper.containsAllMatchingElements([<InputArea />, <BeerList />])
+      wrapper.containsAllMatchingElements([
+        <InputArea onSubmit={null} />,
+        <BeerList items={[]} />
+      ])
     ).toBeTruthy()
   })
 
@@ -19,6 +22,7 @@ describe('BeerListContainer', () => {
 
   it('adds items to the list', () => {
     const wrapper = shallow(<BeerListContainer />)
+    // @ts-ignore
     wrapper.instance().addItem('Sam Adams')
     expect(wrapper.state('beers')).toEqual(['Sam Adams'])
   })
@@ -26,7 +30,26 @@ describe('BeerListContainer', () => {
   it('passes addItem to InputArea', () => {
     const wrapper = shallow(<BeerListContainer />)
     const inputArea = wrapper.find(InputArea)
+    // @ts-ignore
     const addItem = wrapper.instance().addItem
     expect(inputArea.prop('onSubmit')).toEqual(addItem)
+  })
+
+  it('passes a bound addItem function to InputArea', () => {
+    const wrapper = shallow(<BeerListContainer />)
+    const inputArea = wrapper.find(InputArea)
+    // @ts-ignore
+    inputArea.prop('onSubmit')('Sam Adams')
+    expect(wrapper.state('beers')).toEqual(['Sam Adams'])
+  })
+
+  it('renders the items', () => {
+    const wrapper = mount(<BeerListContainer />)
+    // @ts-ignore
+    wrapper.instance().addItem('Sam Adams')
+    // @ts-ignore
+    wrapper.instance().addItem('Resin')
+    wrapper.update()
+    expect(wrapper.find('li')).toHaveLength(2)
   })
 })

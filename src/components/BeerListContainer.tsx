@@ -2,32 +2,33 @@ import * as React from 'react'
 import InputArea from './InputArea'
 import BeerList from './BeerList'
 
-type Props = {}
-
-type State = {
-  beers: Array<any>
+interface IState {
+  beers: string[]
 }
 
-export default class BeerListContainer extends React.Component<Props, State> {
-  constructor(props: Props) {
+class BeerListContainer extends React.Component<{}, IState> {
+  constructor(props: {}) {
     super(props)
     this.state = {
       beers: []
     }
+    this.addItem = this.addItem.bind(this)
   }
 
-  addItem(name: string) {
+  public render() {
+    return (
+      <div>
+        <InputArea onSubmit={this.addItem} />
+        <BeerList items={this.state.beers} />
+      </div>
+    )
+  }
+
+  private addItem(name: string) {
     this.setState({
       beers: [...this.state.beers, name]
     })
   }
-
-  render() {
-    return (
-      <div>
-        <InputArea onSubmit={this.addItem} />
-        <BeerList />
-      </div>
-    )
-  }
 }
+
+export default BeerListContainer

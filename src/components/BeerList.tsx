@@ -1,7 +1,11 @@
 import * as React from 'react'
 
-export default class BeerList extends React.Component {
-  render() {
-    return <ul />
-  }
+interface IProps {
+  items: string[]
 }
+
+const BeerList = ({ items }: IProps) => {
+  return <ul>{items.map((item, index) => <li key={index}>{item}</li>)}</ul>
+}
+
+export default BeerList

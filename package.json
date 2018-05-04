@@ -19,12 +19,18 @@
     "types": "apollo-codegen generate ./src/**/*.tsx --addTypename --schema ./src/schema.json --target typescript --output ./src/__generated__/types.ts"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.10",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/jest": "^22.2.3",
     "@types/node": "^10.0.3",
     "@types/prop-types": "^15.5.2",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "apollo-codegen": "^0.19.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-enzyme": "^6.0.0",
+    "react-test-renderer": "^16.3.2",
     "react-testing-library": "^2.4.0",
     "typescript": "^2.8.3"
   },

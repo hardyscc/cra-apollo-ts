@@ -22,7 +22,7 @@ export const App = () => (
 
       return (
         <div>
-          Stocks :
+          <h4>Stocks :</h4>
           <ul>
             {data &&
               data.stocks.map(stock => (

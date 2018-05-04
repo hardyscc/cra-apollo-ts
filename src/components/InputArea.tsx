@@ -9,13 +9,8 @@ interface IState {
 }
 
 class InputArea extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props)
-    this.state = {
-      text: ''
-    }
-    this.setText = this.setText.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+  public state: IState = {
+    text: ''
   }
 
   public render() {
@@ -27,11 +22,11 @@ class InputArea extends React.Component<IProps, IState> {
     )
   }
 
-  private setText(event: React.ChangeEvent<HTMLInputElement>) {
+  private setText = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ text: event.target.value })
   }
 
-  private handleClick() {
+  private handleClick = () => {
     this.props.onSubmit(this.state.text)
   }
 }

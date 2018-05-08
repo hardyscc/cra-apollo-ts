@@ -26,6 +26,14 @@ exports[`App render 1`] = `
         中電控股
       </li>
     </ul>
+    <button
+      class="ant-btn ant-btn-primary"
+      type="button"
+    >
+      <span>
+        Test
+      </span>
+    </button>
   </div>
 </div>
 `;

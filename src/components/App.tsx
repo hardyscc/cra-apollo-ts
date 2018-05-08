@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
 import { GetStocksQuery } from '../__generated__/types'
+import { Button } from 'antd'
 
 class StocksQuery extends Query<GetStocksQuery> {}
 
@@ -31,6 +32,7 @@ export const App = () => (
                 </li>
               ))}
           </ul>
+          <Button type="primary">Test</Button>
         </div>
       )
     }}

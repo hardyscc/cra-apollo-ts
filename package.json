@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.5.0",
     "apollo-boost": "^0.1.5",
     "graphql": "^0.13.2",
     "react": "^16.3.2",
@@ -11,9 +12,9 @@
     "react-router-dom": "^4.2.2"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
+    "start": "react-app-rewired start --scripts-version react-scripts-ts",
+    "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "test": "react-app-rewired test --scripts-version react-scripts-ts --env=jsdom",
     "eject": "react-scripts-ts eject",
     "schema": "apollo-codegen introspect-schema https://portfolios.now.sh --output ./src/schema.json",
     "types": "apollo-codegen generate ./src/**/*.tsx --addTypename --schema ./src/schema.json --target typescript --output ./src/__generated__/types.ts"
@@ -31,14 +32,17 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-enzyme": "^6.0.0",
+    "react-app-rewired": "^1.5.2",
     "react-scripts-ts": "2.15.1",
     "react-test-renderer": "^16.3.2",
     "react-testing-library": "^2.4.0",
+    "ts-import-plugin": "^1.4.4",
     "typescript": "^2.8.3"
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/components/**/*.{ts,tsx}"
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/*.{js,jsx,ts,tsx}"
     ]
   }
 }

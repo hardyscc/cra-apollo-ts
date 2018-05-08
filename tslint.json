@@ -6,5 +6,8 @@
   "rules": {
     "ordered-imports": false,
     "curly": [true, "ignore-same-line"]
+  },
+  "jsRules": {
+    "object-literal-sort-keys": false
   }
 }

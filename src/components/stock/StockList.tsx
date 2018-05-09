@@ -1,26 +1,21 @@
 import * as React from 'react'
 import { Query } from 'react-apollo'
-import { List } from 'antd'
+import { Table } from 'antd'
 import { gql } from 'apollo-boost'
 import { GetStocksQuery } from '../../__generated__/types'
 
 class StocksQuery extends Query<GetStocksQuery> {}
-type Stock = GetStocksQuery['stocks'][0]
 
 export const STOCKS_QUERY = gql`
   query GetStocks {
-    stocks(type: EQTY, first: 10, skip: 0) {
+    stocks(type: EQTY, first: 100, skip: 0) {
       code
       name
+      lotSize
+      status
     }
   }
 `
-
-const renderItem = (stock: Stock) => (
-  <List.Item>
-    {stock.code} {stock.name}
-  </List.Item>
-)
 
 export const StockList = () => (
   <StocksQuery query={STOCKS_QUERY}>
@@ -29,12 +24,12 @@ export const StockList = () => (
       if (error) return <div>Error :(</div>
 
       return (
-        <List
-          data-testid="stock-list"
-          bordered={true}
-          dataSource={data && data.stocks}
-          renderItem={renderItem}
-        />
+        <Table data-testid="stock-list" dataSource={data && data.stocks}>
+          <Table.Column title="Code" dataIndex="code" key="code" />
+          <Table.Column title="Name" dataIndex="name" key="name" />
+          <Table.Column title="Lot Size" dataIndex="lotSize" key="lotSize" />
+          <Table.Column title="Status" dataIndex="status" key="status" />
+        </Table>
       )
     }}
   </StocksQuery>

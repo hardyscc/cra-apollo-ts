@@ -1,40 +1,30 @@
 import * as React from 'react'
-import { Query } from 'react-apollo'
-import { gql } from 'apollo-boost'
-import { GetStocksQuery } from '../__generated__/types'
-import { Button } from 'antd'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Layout, Menu } from 'antd'
+import { StockList } from './stock/StockList'
+import BeerListContainer from './beer/BeerListContainer'
 
-class StocksQuery extends Query<GetStocksQuery> {}
+import './App.css'
 
-export const STOCKS_QUERY = gql`
-  query GetStocks {
-    stocks(type: EQTY, first: 10, skip: 0) {
-      code
-      name
-    }
-  }
-`
-
-export const App = () => (
-  <StocksQuery query={STOCKS_QUERY}>
-    {({ loading, error, data }) => {
-      if (loading) return <div>Loading...</div>
-      if (error) return <div>Error :(</div>
-
-      return (
-        <div>
-          <h4>Stocks :</h4>
-          <ul>
-            {data &&
-              data.stocks.map(stock => (
-                <li key={stock.name}>
-                  {stock.code} {stock.name}
-                </li>
-              ))}
-          </ul>
-          <Button type="primary">Test</Button>
+export default () => (
+  <Router>
+    <Layout>
+      <Layout.Header>
+        <Menu theme="dark" mode="horizontal" className="menu-box">
+          <Menu.Item key="1">
+            <Link to="/">Stock List</Link>
+          </Menu.Item>
+          <Menu.Item key="2">
+            <Link to="/beer">Beer List</Link>
+          </Menu.Item>
+        </Menu>
+      </Layout.Header>
+      <Layout.Content>
+        <div className="content-box">
+          <Route path="/" exact={true} component={StockList} />
+          <Route path="/beer" component={BeerListContainer} />
         </div>
-      )
-    }}
-  </StocksQuery>
+      </Layout.Content>
+    </Layout>
+  </Router>
 )

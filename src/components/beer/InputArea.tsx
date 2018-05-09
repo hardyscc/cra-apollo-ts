@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Button, Input, Row, Col } from 'antd'
 
 interface IProps {
   onSubmit: (name: string) => void
@@ -15,10 +16,16 @@ class InputArea extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div>
-        <input value={this.state.text} onChange={this.setText} />
-        <button onClick={this.handleClick}>Add</button>
-      </div>
+      <Row type="flex" justify="start" gutter={8}>
+        <Col>
+          <Input value={this.state.text} onChange={this.setText} />
+        </Col>
+        <Col>
+          <Button type="primary" onClick={this.handleClick}>
+            Add
+          </Button>
+        </Col>
+      </Row>
     )
   }
 
@@ -27,7 +34,10 @@ class InputArea extends React.Component<IProps, IState> {
   }
 
   private handleClick = () => {
-    this.props.onSubmit(this.state.text)
+    if (this.state.text) {
+      this.props.onSubmit(this.state.text)
+      this.setState({ text: '' })
+    }
   }
 }
 

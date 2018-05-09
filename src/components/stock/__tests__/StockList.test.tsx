@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { render, wait } from 'react-testing-library'
 import { MockedProvider } from 'react-apollo/test-utils'
-import { App, STOCKS_QUERY } from '../App'
+import { StockList, STOCKS_QUERY } from '../StockList'
 
 const stocks = [
   { code: '0001.HK', name: '長和' },
@@ -13,19 +13,19 @@ const error = new Error('something go wrong')
 
 describe('App', () => {
   it('render', async () => {
-    const { container, getByText } = render(
+    const { container, getByTestId } = render(
       <MockedProvider mocks={[{ request, result }]}>
-        <App />
+        <StockList />
       </MockedProvider>
     )
-    await wait(() => getByText('Stocks'))
+    await wait(() => getByTestId('stock-list'))
     expect(container).toMatchSnapshot()
   })
 
   it('error', async () => {
     const { container, getByText } = render(
       <MockedProvider mocks={[{ request, error }]}>
-        <App />
+        <StockList />
       </MockedProvider>
     )
     await wait(() => getByText('Error'))

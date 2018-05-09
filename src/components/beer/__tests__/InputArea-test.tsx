@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { shallow, mount } from 'enzyme'
 import InputArea from '../InputArea'
+import { Button, Input } from 'antd'
 
 describe('InputArea', () => {
   it('should contain an input and a button', () => {
     const wrapper = mount(<InputArea onSubmit={null} />)
     expect(
-      wrapper.containsAllMatchingElements([<input />, <button>Add</button>])
+      wrapper.containsAllMatchingElements([<Input />, <Button>Add</Button>])
     ).toBeTruthy()
   })
 
@@ -21,11 +22,14 @@ describe('InputArea', () => {
   it('should call onSubmit when Add is clicked', () => {
     const addItemSpy = jest.fn()
     const wrapper = shallow(<InputArea onSubmit={addItemSpy} />)
-    wrapper.setState({ text: 'Octoberfest' })
-    const addButton = wrapper.find('button')
+    const addButton = wrapper.find('Button')
 
+    wrapper.setState({ text: '' })
     addButton.simulate('click')
+    expect(addItemSpy).toHaveBeenCalledTimes(0)
 
+    wrapper.setState({ text: 'Octoberfest' })
+    addButton.simulate('click')
     expect(addItemSpy).toBeCalled()
     expect(addItemSpy).toBeCalledWith('Octoberfest')
   })

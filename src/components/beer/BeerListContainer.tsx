@@ -21,11 +21,10 @@ class BeerListContainer extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div>
-        <h4>{this.props.title} :</h4>
+      <React.Fragment>
         <InputArea onSubmit={this.addItem} />
         <BeerList items={this.state.beers} />
-      </div>
+      </React.Fragment>
     )
   }
 

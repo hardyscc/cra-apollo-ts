@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App error 1`] = `
+<div>
+  <div>
+    Error :(
+  </div>
+</div>
+`;
+
+exports[`App render 1`] = `
+<div>
+  <div
+    class="ant-list ant-list-split ant-list-bordered"
+    data-testid="stock-list"
+  >
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-list-item"
+        >
+          <div
+            class="ant-list-item-content ant-list-item-content-single"
+          >
+            0001.HK
+             
+            長和
+          </div>
+        </div>
+        <div
+          class="ant-list-item"
+        >
+          <div
+            class="ant-list-item-content ant-list-item-content-single"
+          >
+            0002.HK
+             
+            中電控股
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

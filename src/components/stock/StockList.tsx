@@ -24,7 +24,10 @@ export const StockList = () => (
       if (error) return <div>Error :(</div>
 
       return (
-        <Table data-testid="stock-list" dataSource={data && data.stocks}>
+        <Table
+          data-testid="stock-list"
+          dataSource={data && data.stocks}
+          size="small">
           <Table.Column title="Code" dataIndex="code" key="code" />
           <Table.Column title="Name" dataIndex="name" key="name" />
           <Table.Column title="Lot Size" dataIndex="lotSize" key="lotSize" />

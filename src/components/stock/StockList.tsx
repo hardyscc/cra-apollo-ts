@@ -24,15 +24,14 @@ export const StockList = () => (
       if (error) return <div>Error :(</div>
 
       return (
-        <Table
-          data-testid="stock-list"
-          dataSource={data && data.stocks}
-          size="small">
-          <Table.Column title="Code" dataIndex="code" key="code" />
-          <Table.Column title="Name" dataIndex="name" key="name" />
-          <Table.Column title="Lot Size" dataIndex="lotSize" key="lotSize" />
-          <Table.Column title="Status" dataIndex="status" key="status" />
-        </Table>
+        <div data-testid="stock-list">
+          <Table dataSource={data && data.stocks} size="small">
+            <Table.Column title="Code" dataIndex="code" key="code" />
+            <Table.Column title="Name" dataIndex="name" key="name" />
+            <Table.Column title="Lot Size" dataIndex="lotSize" key="lotSize" />
+            <Table.Column title="Status" dataIndex="status" key="status" />
+          </Table>
+        </div>
       )
     }}
   </StocksQuery>

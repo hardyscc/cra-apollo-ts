@@ -11,35 +11,80 @@ exports[`App error 1`] = `
 exports[`App render 1`] = `
 <div>
   <div
-    class="ant-list ant-list-split ant-list-bordered"
     data-testid="stock-list"
   >
     <div
-      class="ant-spin-nested-loading"
+      class="ant-table-wrapper"
     >
       <div
-        class="ant-spin-container"
+        class="ant-spin-nested-loading"
       >
         <div
-          class="ant-list-item"
+          class="ant-spin-container"
         >
           <div
-            class="ant-list-item-content ant-list-item-content-single"
+            class="ant-table ant-table-small ant-table-empty ant-table-scroll-position-left"
           >
-            0001.HK
-             
-            長和
-          </div>
-        </div>
-        <div
-          class="ant-list-item"
-        >
-          <div
-            class="ant-list-item-content ant-list-item-content-single"
-          >
-            0002.HK
-             
-            中電控股
+            <div
+              class="ant-table-content"
+            >
+              <div
+                class="ant-table-body"
+              >
+                <table
+                  class=""
+                >
+                  <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                  </colgroup>
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <th
+                        class=""
+                      >
+                        <span>
+                          Code
+                        </span>
+                      </th>
+                      <th
+                        class=""
+                      >
+                        <span>
+                          Name
+                        </span>
+                      </th>
+                      <th
+                        class=""
+                      >
+                        <span>
+                          Lot Size
+                        </span>
+                      </th>
+                      <th
+                        class=""
+                      >
+                        <span>
+                          Status
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  />
+                </table>
+              </div>
+              <div
+                class="ant-table-placeholder"
+              >
+                No data
+              </div>
+            </div>
           </div>
         </div>
       </div>

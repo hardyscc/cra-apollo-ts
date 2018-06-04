@@ -4,8 +4,20 @@ import { MockedProvider } from 'react-apollo/test-utils'
 import { StockList, STOCKS_QUERY } from '../StockList'
 
 const stocks = [
-  { code: '0001.HK', name: '長和' },
-  { code: '0002.HK', name: '中電控股' }
+  {
+    __typename: 'Stock',
+    code: '0001.HK',
+    lotSize: 50,
+    name: '長和',
+    status: 'Active'
+  },
+  {
+    __typename: 'Stock',
+    code: '0002.HK',
+    lotSize: 100,
+    name: '中電控股',
+    status: 'Active'
+  }
 ]
 const request = { query: STOCKS_QUERY }
 const result = { data: { stocks } }

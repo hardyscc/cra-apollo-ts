@@ -25,7 +25,7 @@ export const StockList = () => (
 
       return (
         <div data-testid="stock-list">
-          <Table dataSource={data && data.stocks} size="small">
+          <Table dataSource={data && data.stocks} rowKey="code" size="small">
             <Table.Column title="Code" dataIndex="code" key="code" />
             <Table.Column title="Name" dataIndex="name" key="name" />
             <Table.Column title="Lot Size" dataIndex="lotSize" key="lotSize" />

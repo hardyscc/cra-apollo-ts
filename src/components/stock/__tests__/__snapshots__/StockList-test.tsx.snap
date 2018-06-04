@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App error 1`] = `
+<div>
+  <div>
+    Error :(
+  </div>
+</div>
+`;
+
+exports[`App render 1`] = `
+<div>
+  <div
+    data-testid="stock-list"
+  >
+    <div
+      class="ant-table-wrapper"
+    >
+      <div
+        class="ant-spin-nested-loading"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-small ant-table-scroll-position-left"
+          >
+            <div
+              class="ant-table-content"
+            >
+              <div
+                class="ant-table-body"
+              >
+                <table
+                  class=""
+                >
+                  <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                  </colgroup>
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <th
+                        class=""
+                      >
+                        <span>
+                          Code
+                        </span>
+                      </th>
+                      <th
+                        class=""
+                      >
+                        <span>
+                          Name
+                        </span>
+                      </th>
+                      <th
+                        class=""
+                      >
+                        <span>
+                          Lot Size
+                        </span>
+                      </th>
+                      <th
+                        class=""
+                      >
+                        <span>
+                          Status
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      class="ant-table-row  ant-table-row-level-0"
+                    >
+                      <td
+                        class=""
+                      >
+                        <span
+                          class="ant-table-row-indent indent-level-0"
+                          style="padding-left: 0px;"
+                        />
+                        0001.HK
+                      </td>
+                      <td
+                        class=""
+                      >
+                        長和
+                      </td>
+                      <td
+                        class=""
+                      >
+                        50
+                      </td>
+                      <td
+                        class=""
+                      >
+                        Active
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row  ant-table-row-level-0"
+                    >
+                      <td
+                        class=""
+                      >
+                        <span
+                          class="ant-table-row-indent indent-level-0"
+                          style="padding-left: 0px;"
+                        />
+                        0002.HK
+                      </td>
+                      <td
+                        class=""
+                      >
+                        中電控股
+                      </td>
+                      <td
+                        class=""
+                      >
+                        100
+                      </td>
+                      <td
+                        class=""
+                      >
+                        Active
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <ul
+            class="ant-pagination ant-table-pagination mini"
+            unselectable="unselectable"
+          >
+            <li
+              aria-disabled="true"
+              class="ant-pagination-disabled ant-pagination-prev"
+              title="Previous Page"
+            >
+              <a
+                class="ant-pagination-item-link"
+              />
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+              tabindex="0"
+              title="1"
+            >
+              <a>
+                1
+              </a>
+            </li>
+            <li
+              aria-disabled="true"
+              class="ant-pagination-disabled ant-pagination-next"
+              title="Next Page"
+            >
+              <a
+                class="ant-pagination-item-link"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

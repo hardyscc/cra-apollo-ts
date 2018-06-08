@@ -33,7 +33,7 @@ class InputArea extends React.Component<IProps, IState> {
     this.setState({ text: event.target.value })
   }
 
-  private handleClick = () => {
+  private handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (this.state.text) {
       this.props.onSubmit(this.state.text)
       this.setState({ text: '' })

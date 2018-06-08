@@ -18,6 +18,9 @@ class AppMenu extends React.Component<RouteComponentProps<any>> {
         <Menu.Item key="/beer">
           <Link to="/beer">Beer List</Link>
         </Menu.Item>
+        <Menu.Item key="/test">
+          <Link to="/test">Testing</Link>
+        </Menu.Item>
       </Menu>
     )
   }

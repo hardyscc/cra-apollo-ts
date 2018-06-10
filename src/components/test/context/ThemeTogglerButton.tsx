@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Button } from 'antd'
 
 import { ThemeContext } from './ThemeContext'
 
@@ -8,11 +9,11 @@ function ThemeTogglerButton() {
   return (
     <ThemeContext.Consumer>
       {({ theme, toggleTheme }) => (
-        <button
+        <Button
           onClick={toggleTheme}
           style={{ backgroundColor: theme.background }}>
           Toggle Theme
-        </button>
+        </Button>
       )}
     </ThemeContext.Consumer>
   )

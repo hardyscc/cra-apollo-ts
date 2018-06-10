@@ -4,8 +4,8 @@ import TestContext from './context/TestContext'
 
 export default () => (
   <div>
-    <TestRef />
-    <hr />
     <TestContext />
+    <hr />
+    <TestRef />
   </div>
 )

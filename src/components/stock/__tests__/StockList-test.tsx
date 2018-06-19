@@ -40,7 +40,7 @@ describe('App', () => {
         <StockList />
       </MockedProvider>
     )
-    await wait(() => getByText('Error :('))
+    await wait(() => getByText('Error!'))
     expect(container).toMatchSnapshot()
   })
 })

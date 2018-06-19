@@ -3,7 +3,7 @@
 exports[`App error 1`] = `
 <div>
   <div>
-    Error :(
+    Error!
   </div>
 </div>
 `;

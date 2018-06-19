@@ -4,8 +4,6 @@ import { Table } from 'antd'
 import { gql } from 'apollo-boost'
 import { GetStocksQuery } from '../../__generated__/types'
 
-class StocksQuery extends Query<GetStocksQuery> {}
-
 export const STOCKS_QUERY = gql`
   query GetStocks {
     stocks(type: EQTY, first: 100, skip: 0) {
@@ -18,7 +16,7 @@ export const STOCKS_QUERY = gql`
 `
 
 export const StockList = () => (
-  <StocksQuery query={STOCKS_QUERY}>
+  <Query<GetStocksQuery> query={STOCKS_QUERY}>
     {({ loading, error, data }) => {
       if (loading) return <div>Loading...</div>
       if (error) return <div>Error :(</div>
@@ -34,5 +32,5 @@ export const StockList = () => (
         </div>
       )
     }}
-  </StocksQuery>
+  </Query>
 )

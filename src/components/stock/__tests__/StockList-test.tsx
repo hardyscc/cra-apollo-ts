@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { render, wait } from 'react-testing-library'
 import { MockedProvider } from 'react-apollo/test-utils'
-import { StockList, STOCKS_QUERY } from '../StockList'
+import { StockList, getStocksQuery } from '../StockList'
 
 const stocks = [
   {
@@ -19,7 +19,7 @@ const stocks = [
     status: 'Active'
   }
 ]
-const request = { query: STOCKS_QUERY }
+const request = { query: getStocksQuery }
 const result = { data: { stocks } }
 const error = new Error('something go wrong')
 

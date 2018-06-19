@@ -18,7 +18,7 @@
     "test": "react-app-rewired test --scripts-version react-scripts-ts --env=jsdom",
     "eject": "react-scripts-ts eject",
     "schema": "apollo-codegen introspect-schema https://portfolios.now.sh --output ./src/schema.json",
-    "types": "apollo-codegen generate ./src/*/*/*.tsx --addTypename --schema ./src/schema.json --target typescript --output ./src/__generated__/types.ts"
+    "types": "apollo-codegen generate ./src/*/*/*.tsx --addTypename --schema ./src/schema.json --target ts-modern"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.10",

@@ -5,6 +5,7 @@ import AppMenu from './AppMenu'
 import { StockList } from './stock/StockList'
 import BeerListContainer from './beer/BeerListContainer'
 import Test from './test/Test'
+import LayoutTest from './layout/LayoutTest'
 
 import './App.css'
 
@@ -18,6 +19,7 @@ export default () => (
         <Route path="/" exact={true} component={StockList} />
         <Route path="/beer" component={BeerListContainer} />
         <Route path="/test" component={Test} />
+        <Route path="/layout" component={LayoutTest} />
       </Layout.Content>
     </Layout>
   </Router>

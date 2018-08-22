@@ -25,10 +25,10 @@ class TestRef extends React.Component<{}> {
   }
 
   private handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     if (this.input.current) {
       alert('A name was submitted: ' + this.input.current.input.value)
     }
-    event.preventDefault()
   }
 }
 
